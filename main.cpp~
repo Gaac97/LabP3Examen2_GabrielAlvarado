@@ -72,7 +72,10 @@ Lista ListSelec;
 	
 	}
 	if( opc==3){
-
+	// Elimina un nodo
+	/*cout<<"Numero de la seleccion\n";
+	cin>>num;*/
+	//ListSelec.Borrar(num);
 		}
 		
 		cout<<"Desea continuar s/n"<<endl;

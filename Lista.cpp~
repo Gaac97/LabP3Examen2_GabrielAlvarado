@@ -6,11 +6,23 @@ using namespace std;
 using std::cout;
 using std::endl;
 
-Lista::Lista(){
+Lista::Lista()
+{
 start = NULL;
 }
 
-
+//Destructor de la clase
+Lista::~Lista()
+{
+	Nodo *tempo, *anterior;
+	tempo = start;
+	while (tempo != NULL)
+	{ 
+	anterior = tempo;
+	tempo = tempo->siguiente;
+	delete anterior;
+	}
+}
 
 void Lista::Agregar(Seleccion* add)
 {
@@ -21,11 +33,11 @@ void Lista::Agregar(Seleccion* add)
 	nuevo->numero = add;
 	nuevo->siguiente = NULL;
 	temporal = start;
-	anterior = NULL;
-		if (start == NULL) {
-				start = nuevo;
-				}	
-				else{
+	anterior = NULL;// 
+		if (start == NULL) 
+				start = nuevo;	
+			else
+			{
 			while ((temporal != NULL) && (temporal->numero < add))
 				{
 				anterior = temporal;
@@ -34,9 +46,8 @@ void Lista::Agregar(Seleccion* add)
 				nuevo->siguiente = temporal;
 				if (anterior == NULL) 
 					start = nuevo;
-				else{
-					anterior->siguiente = nuevo;
-					}
+				else
+				anterior->siguiente = nuevo;
 			}
 }
 			
@@ -67,4 +78,24 @@ void Lista::MostrarMaxGole()
 	}
 }
 
-
+/*void Lista::Borrar(Seleccion* num)
+{ 
+	Nodo* nodo, *anterior;
+	nodo = inicio;
+	anterior = NULL;
+	while ((nodo != NULL) && (nodo->numero != num))
+	{ 
+		anterior = nodo;
+		nodo = nodo->siguiente;
+	}
+	if(nodo == NULL)
+		cout<<"La lista esta vacia"<<endl;
+	else
+	{
+		if(nodo == start)// se va a borrar el primer nodo
+			inicio = star->siguiente;
+				else 
+				anterior->siguiente = nodo->siguiente;
+				delete nodo;
+	}		
+}*/

@@ -12,6 +12,7 @@ public:
 	void Agregar(Seleccion* num);// metodo que agrega 
 	void Mostrar();// muestra todos los elementos
 	void MostrarMaxGole();//Muestra los goleadores
+	//void Borrar(int num);// elimina de la lista
 private:
 	Nodo* start; // Inicio de la lista
 };
