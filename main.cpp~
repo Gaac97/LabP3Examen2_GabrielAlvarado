@@ -17,7 +17,6 @@ Lista ListSelec;
 	cout<< "1. Agregar"<<endl;
 	cout<< "2. Mostrar Lista"<<endl;
 	cout<< "3. Eliminar"<<endl;
-	cout<< "4. Terminar"<<endl;
 	cout<< "Opcion ";
 	cin>>opc;
 	if(opc==1){
@@ -72,13 +71,15 @@ Lista ListSelec;
 	
 	}
 	if( opc==3){
-	// Elimina un nodo
-	/*cout<<"Numero de la seleccion\n";
-	cin>>num;*/
-	//ListSelec.Borrar(num);
-		}
+		string nombre;
+		cout<<"Ingrese el nombre de la seleccion a eliminar"<<endl;
+		cin>>nombre;
+		Nodo* temp = ListSelec.buscar(nombre);
+		ListSelec.Borrar(temp);
+	}
 		
 		cout<<"Desea continuar s/n"<<endl;
+		cin>>resp;
 	 }
 	return 0;
 }

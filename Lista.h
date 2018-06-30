@@ -9,9 +9,11 @@ class Lista
 public:
 	Lista();
 	~Lista();
-	void Agregar(Seleccion* num);// metodo que agrega 
+	void Agregar(Seleccion* selec);// metodo que agrega 
 	void Mostrar();// muestra todos los elementos
 	void MostrarMaxGole();//Muestra los goleadores
+	Nodo* buscar(string nombre);
+	void Borrar(Nodo* n);
 private:
 	Nodo* start; // Inicio de la lista
 };

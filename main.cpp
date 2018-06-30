@@ -17,7 +17,6 @@ Lista ListSelec;
 	cout<< "1. Agregar"<<endl;
 	cout<< "2. Mostrar Lista"<<endl;
 	cout<< "3. Eliminar"<<endl;
-	cout<< "4. Terminar"<<endl;
 	cout<< "Opcion ";
 	cin>>opc;
 	if(opc==1){
@@ -62,6 +61,7 @@ Lista ListSelec;
 		cout<<"4.Listar Selecciones con mas goles"<<endl;
 		cin>>op2;	
 		if(op2==1){
+			cout<<endl;
 			ListSelec.Mostrar();
 			cout<<endl;
 		}
@@ -72,10 +72,15 @@ Lista ListSelec;
 	
 	}
 	if( opc==3){
-
-		}
+		string nombre;
+		cout<<"Ingrese el nombre de la seleccion a eliminar"<<endl;
+		cin>>nombre;
+		Nodo* temp = ListSelec.buscar(nombre);
+		ListSelec.Borrar(temp);
+	}
 		
 		cout<<"Desea continuar s/n"<<endl;
+		cin>>resp;
 	 }
 	return 0;
 }
